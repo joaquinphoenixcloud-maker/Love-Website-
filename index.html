@@ -3,114 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Website</title>
+    <title>Our Eternal Love Story</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* LOVE WEBSITE COLOR PALETTE */
+        /* LOVE WEBSITE APP STYLE COLORS */
         :root {
-            --bg-primary: #FEF9E7; /* Soft Cream */
-            --color-accent: #E74C3C; /* Terracotta Red (Love) */
+            --color-primary: #E74C8C; /* Vibrant Pink / Magenta Accent */
+            --color-secondary: #FF6699; /* Soft Pink */
             --color-text: #333333;
-            --color-subtle: #884A55; /* Muted Rose */
+            --color-bg-light: #FFFFFF;
+            --color-bg-dark: #FEF9E7; /* Soft Cream Background */
         }
 
         body {
-            font-family: 'Georgia', serif; /* Elegant Serif Font */
+            font-family: 'Lato', sans-serif; /* Clean Sans-Serif for modern feel */
             margin: 0;
             padding: 0;
-            background-color: var(--bg-primary);
+            background-color: var(--color-bg-dark);
             color: var(--color-text);
+        }
+        
+        /* HEADER - App Style */
+        .app-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .app-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        }
+
+        /* NAVIGATION BAR */
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--color-bg-light);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-item {
+            flex: 1;
+            padding: 15px 10px;
+            text-align: center;
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        /* SECTION STYLING */
+        .section-container {
+            padding: 20px 15px;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            color: var(--color-primary);
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
             text-align: center;
         }
-
-        /* HEADER */
-        .love-header {
-            background-color: var(--color-accent);
-            color: white;
-            padding: 40px 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .love-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            margin: 0;
-        }
         
-        .love-heart {
-            color: var(--bg-primary);
-            margin-top: 10px;
-            font-size: 20px;
+        /* --- 1. GALLERY SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
 
-        /* MAIN CONTENT */
-        .dedication-section {
-            padding: 50px 20px;
-        }
-
-        .dedication-message {
-            font-size: 20px;
-            color: var(--color-subtle);
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-        
-        .photo-frame {
-            width: 250px;
-            height: 250px;
-            background-color: white;
-            border: 5px solid var(--color-subtle);
-            border-radius: 50%; /* Circle */
-            margin: 20px auto;
+        .photo-card {
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .photo-frame img {
+        .photo-card img {
             width: 100%;
-            height: 100%;
+            height: 150px;
             object-fit: cover;
         }
         
-        /* FOOTER */
-        .love-footer {
-            padding: 20px;
-            background-color: var(--color-subtle);
-            color: white;
-            font-size: 14px;
+        /* --- 2. TIMELINE SECTION --- */
+        .timeline-item {
+            background: var(--color-bg-light);
+            border-left: 3px solid var(--color-secondary);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: left;
         }
+        
+        .timeline-date {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--color-accent);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-event {
+            font-size: 16px;
+        }
+
+        /* --- 3. DEDICATION SECTION --- */
+        .dedication-box {
+            background: var(--color-primary);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        .dedication-text {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .signature {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: right;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            padding-top: 5px;
+        }
+        
+        /* FOOTER */
+        .app-footer {
+            padding: 20px;
+            background-color: var(--color-secondary);
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="love-header">
-        <h1 class="love-title">My Love Website</h1>
-        <div class="love-heart"><i class="fas fa-heart"></i> <i class="fas fa-heart"></i></div>
-    </div>
+    <header class="app-header">
+        <div class="app-title">My Love Story</div>
+        <div style="font-size: 24px;"><i class="fas fa-heart"></i></div>
+    </header>
+    
+    <nav class="nav-bar" id="navBar">
+        <a href="#gallery" class="nav-item active" onclick="setActive(this)">GALLERY</a>
+        <a href="#timeline" class="nav-item" onclick="setActive(this)">TIMELINE</a>
+        <a href="#dedication" class="nav-item" onclick="setActive(this)">MESSAGE</a>
+    </nav>
 
-    <div class="dedication-section">
-        <p class="dedication-message">
-            We built this space to hold our precious memories. 
-            Every moment, every laugh, every challenge—it all belongs here.
-        </p>
-
-        <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1542042079070-5b5c93c3b01a?q=80&w=2000" alt="Couple Photo">
-        </div>
+    <main class="section-container">
         
-        <h2 style="color: var(--color-accent); font-weight: normal; margin-top: 30px;">
-            "A True Love Story Never Ends"
-        </h2>
-    </div>
+        <section id="gallery" style="margin-bottom: 40px;">
+            <h2 class="section-title">Our Best Moments</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1517404215738-15263e9f9178?w=300" alt="Memory 1">
+                    <p style="padding: 10px; font-size:12px;">First Date</p>
+                </div>
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1456247966750-7119253457e4?w=300" alt="Memory 2">
+                    <p style="padding: 10px; font-size:12px;">The Trip</p>
+                </div>
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1502422079088-757b3f946e3b?w=300" alt="Memory 3">
+                    <p style="padding: 10px; font-size:12px;">Morning Coffee</p>
+                </div>
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1549441164-ce53434190c3?w=300" alt="Memory 4">
+                    <p style="padding: 10px; font-size:12px;">Our Picnic</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="love-footer">
-        Dedicated with love. © 2025
-    </div>
+        <section id="timeline" style="margin-bottom: 40px;">
+            <h2 class="section-title">Our Journey</h2>
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 / 05 / 20</div>
+                    <div class="timeline-event">The day we first met. <i class="fas fa-star" style="color: gold;"></i></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 / 10 / 27</div>
+                    <div class="timeline-event">Officially became a couple.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 / 02 / 14</div>
+                    <div class="timeline-event">Valentine's Day Trip.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 / 11 / 23</div>
+                    <div class="timeline-event">Launched this website!</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dedication">
+            <h2 class="section-title">Message to You</h2>
+            <div class="dedication-box">
+                <p class="dedication-text">
+                    "Every day since you came into my life has felt like a dream. 
+                    Thank you for being my constant, my greatest supporter, and my best friend."
+                </p>
+                <div class="signature">- From Your Ko Ko</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="app-footer">
+        Made with love in Myanmar.
+    </footer>
+    
+    <script>
+        // JS FOR NAVIGATION AND SCROLLING
+        function setActive(element) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Smooth scroll for single-page navigation
+        document.querySelectorAll('.nav-item').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60, // 60px offset for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
