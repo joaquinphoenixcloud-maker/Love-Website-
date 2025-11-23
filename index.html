@@ -3,42 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST</title>
+    <title>Our Eternal Love Story</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* COLOR PALETTE & STYLES (App-like, Elegant) */
-        :root { --color-accent: #A0522D; --color-bg-primary: #FFFFFF; --color-bg-secondary: #F8F8F8; --color-text: #333333; }
-        body { font-family: Georgia, serif; margin: 0; padding: 0; background-color: var(--color-bg-primary); color: var(--color-text); line-height: 1.6; }
-        .app-header { background-color: white; padding: 20px 0; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .header-title { font-size: 16px; font-weight: normal; letter-spacing: 3px; text-transform: uppercase; color: var(--color-text); }
-        .nav-bar { display: flex; justify-content: center; gap: 30px; padding: 10px 0; background: white; border-top: 1px solid #eee; position: sticky; top: 0; z-index: 50; }
-        .nav-item { color: var(--color-text); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; cursor: pointer; }
-        .nav-item:hover { color: var(--color-accent); }
+        /* ELEGANT LOVE WEBSITE COLOR PALETTE */
+        :root {
+            --color-accent: #A0522D; /* Soft Brown/Rose Gold */
+            --color-bg-primary: #FFFFFF; /* White Background for Clean Look */
+            --color-bg-secondary: #F8F8F8; /* Soft Cream for Sections */
+            --color-text: #333333;
+        }
+
+        body {
+            font-family: Georgia, serif; /* Elegant Serif Font */
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        .app-header {
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-title {
+            font-size: 16px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-text);
+        }
+
+        /* NAVIGATION BAR */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 0;
+            background: white;
+            border-top: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-item {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--color-accent);
+        }
 
         /* HERO SECTION */
-        .hero-section { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 20px; padding: 40px 15px; background: var(--color-bg-secondary); }
-        .hero-image-block img { width: 100%; height: 350px; object-fit: cover; border-radius: 5px; display: block; }
-        .hero-text { font-family: 'Times New Roman', serif; font-size: 32px; font-weight: bold; color: var(--color-accent); line-height: 1.2; margin-bottom: 15px; }
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 20px;
+            padding: 40px 15px;
+            background: var(--color-bg-secondary);
+        }
 
-        /* CONTENT SECTIONS */
-        .content-section { padding: 50px 15px; max-width: 1000px; margin: 0 auto; }
-        .section-header { font-size: 18px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 5px; text-align: center; }
-        .section-title { font-size: 32px; margin-top: 0; margin-bottom: 50px; text-align: center; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .photo-block img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .timeline-list { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; }
-        .timeline-list li { border-left: 2px solid var(--color-accent); padding: 10px 0 10px 20px; margin-left: 10px; position: relative; }
-        .timeline-date { font-weight: bold; color: var(--color-accent); font-size: 14px; display: block; }
+        .hero-image-block {
+            overflow: hidden;
+            border-radius: 5px;
+        }
 
-        /* DEDICATION */
-        .dedication-card { background: white; border: 1px solid #ddd; padding: 30px; border-radius: 10px; max-width: 700px; margin: 0 auto; text-align: center; }
-        .quote { font-family: 'Times New Roman', serif; font-size: 24px; font-style: italic; color: var(--color-text); margin-bottom: 15px; border-left: 4px solid var(--color-accent); padding-left: 15px; }
+        .hero-image-block img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-text-block {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-text {
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--color-accent);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        
+        /* GENERAL SECTIONS */
+        .content-section {
+            padding: 50px 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* --- 1. GALLERY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .photo-block {
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .photo-block img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* --- 2. TIMELINE --- */
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .timeline-list li {
+            border-left: 2px solid var(--color-accent);
+            padding: 10px 0 10px 20px;
+            margin-left: 10px;
+            position: relative;
+        }
+        
+        .timeline-list li:before {
+            content: '•';
+            position: absolute;
+            left: -10px;
+            color: var(--color-accent);
+            font-size: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--color-accent);
+            font-size: 14px;
+            display: block;
+        }
+        
+        /* --- 3. DEDICATION --- */
+        .dedication-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .quote {
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--color-text);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--color-accent);
+            padding-left: 15px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-weight: bold;
+            color: var(--color-accent);
+        }
+
+        /* FOOTER */
+        .app-footer {
+            padding: 30px;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text);
+            text-align: center;
+            font-size: 14px;
+            margin-top: 50px;
+        }
         
         /* MODALS */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; }
         .modal-content { background: white; width: 90%; max-width: 350px; border-radius: 10px; padding: 20px; max-height: 90vh; overflow-y: auto; }
+        .close-modal { float: right; font-size: 24px; cursor: pointer; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
         .submit-btn { width: 100%; padding: 12px; background: var(--color-accent); color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
     </style>
 </head>
 <body>
@@ -52,7 +236,7 @@
         <a href="#gallery" class="nav-item" onclick="setActive(this)">GALLERY</a>
         <a href="#timeline" class="nav-item" onclick="setActive(this)">JOURNEY</a>
         <a href="#dedication" class="nav-item" onclick="setActive(this)">MESSAGE</a>
-        <a href="#" class="nav-item" onclick="startAuthProcess()" style="color: var(--color-accent);"><i class="fas fa-user-circle"></i></a>
+        <a href="#" class="nav-item" onclick="checkAuth()" style="color: var(--color-accent);"><i class="fas fa-user-circle"></i></a>
     </nav>
     
     <section id="hero" class="hero-section">
@@ -95,7 +279,9 @@
         <p class="section-header">A PERSONAL NOTE</p>
         <h2 class="section-title">My Heart's Message</h2>
         <div class="dedication-card">
-            <p class="quote">"Every day with you is my favorite day. So, today is my new favorite day."</p>
+            <p class="quote">
+                "Every day with you is my favorite day. So, today is my new favorite day."
+            </p>
             <div class="signature">- Always, Your Ko Ko</div>
         </div>
     </section>
@@ -189,8 +375,8 @@
 
             if(!name || !username || !pass) { alert("Name, Username, and Password are required."); return; }
 
-            let { data: exist } = await supabase.from('users').select('*').eq('username', username);
-            if(exist.length > 0) { alert("Username already taken."); return; }
+            let { data: exist } = await supabase.from('users').select('username').eq('username', username);
+            if(exist && exist.length > 0) { alert("Username already taken."); return; }
 
             let { error } = await supabase.from('users').insert([{ name, username, phone, password: pass }]);
             
@@ -206,7 +392,7 @@
             const username = document.getElementById('lUser').value;
             const pass = document.getElementById('lPass').value;
 
-            let { data } = await supabase
+            let { data, error } = await supabase
                 .from('users')
                 .select('*')
                 .eq('username', username)
@@ -227,7 +413,6 @@
             const con = document.getElementById('galleryGrid');
             con.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Fetching memories...</p>';
 
-            // Assuming a table named 'user_content' exists for memories
             let { data: memories, error } = await supabase
                 .from('user_content') 
                 .select('*')
@@ -260,6 +445,7 @@
             const caption = document.getElementById('uploadCaption').value;
             
             if(!imgUrl || !caption) { alert("Please fill both fields."); return; }
+            if(!currentUser) { alert("You must be logged in to share."); closeModal('uploadModal'); return; }
             
             let { error } = await supabase
                 .from('user_content')
