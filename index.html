@@ -7,150 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* ELEGANT LOVE WEBSITE COLOR PALETTE */
-        :root {
-            --color-accent: #A0522D; /* Soft Brown/Rose Gold */
-            --color-bg-primary: #FFFFFF; /* White Background for Clean Look */
-            --color-bg-secondary: #F8F8F8; /* Soft Cream for Sections */
-            --color-text: #333333;
-        }
-
-        body {
-            font-family: Georgia, serif; /* Elegant Serif Font for headings and body */
-            margin: 0;
-            padding: 0;
-            background-color: var(--color-bg-primary);
-            color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        /* HEADER - Minimal and Elegant */
-        .app-header {
-            background-color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .header-title {
-            font-size: 16px;
-            font-weight: normal;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-text);
-        }
-
-        /* NAVIGATION BAR */
-        .nav-bar {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 10px 0;
-            background: white;
-            border-top: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-
-        .nav-item {
-            color: var(--color-text);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-item:hover, .nav-item.active {
-            color: var(--color-accent);
-        }
+        /* COLOR PALETTE & STYLES (App-like, Elegant) */
+        :root { --color-accent: #A0522D; --color-bg-primary: #FFFFFF; --color-bg-secondary: #F8F8F8; --color-text: #333333; }
+        body { font-family: Georgia, serif; margin: 0; padding: 0; background-color: var(--color-bg-primary); color: var(--color-text); line-height: 1.6; }
+        .app-header { background-color: white; padding: 20px 0; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-title { font-size: 16px; font-weight: normal; letter-spacing: 3px; text-transform: uppercase; color: var(--color-text); }
+        .nav-bar { display: flex; justify-content: center; gap: 30px; padding: 10px 0; background: white; border-top: 1px solid #eee; position: sticky; top: 0; z-index: 50; }
+        .nav-item { color: var(--color-text); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; cursor: pointer; }
+        .nav-item:hover { color: var(--color-accent); }
 
         /* HERO SECTION */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 1fr;
-            gap: 20px;
-            padding: 40px 15px;
-            background: var(--color-bg-secondary);
-        }
+        .hero-section { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 20px; padding: 40px 15px; background: var(--color-bg-secondary); }
+        .hero-image-block img { width: 100%; height: 350px; object-fit: cover; border-radius: 5px; display: block; }
+        .hero-text { font-family: 'Times New Roman', serif; font-size: 32px; font-weight: bold; color: var(--color-accent); line-height: 1.2; margin-bottom: 15px; }
 
-        .hero-image-block {
-            overflow: hidden;
-            border-radius: 5px;
-        }
-
-        .hero-image-block img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero-text-block {
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-text {
-            font-family: 'Times New Roman', serif;
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--color-accent);
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-        
-        /* GENERAL SECTIONS */
-        .content-section {
-            padding: 50px 15px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            font-size: 18px;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 5px;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 32px;
-            margin-top: 0;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        /* GALLERY & TIMELINE STYLING */
+        /* CONTENT SECTIONS */
+        .content-section { padding: 50px 15px; max-width: 1000px; margin: 0 auto; }
+        .section-header { font-size: 18px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 5px; text-align: center; }
+        .section-title { font-size: 32px; margin-top: 0; margin-bottom: 50px; text-align: center; }
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
         .photo-block img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .timeline-list { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; }
         .timeline-list li { border-left: 2px solid var(--color-accent); padding: 10px 0 10px 20px; margin-left: 10px; position: relative; }
-        .timeline-list li:before { content: '•'; position: absolute; left: -10px; color: var(--color-accent); font-size: 20px; top: 50%; transform: translateY(-50%); }
         .timeline-date { font-weight: bold; color: var(--color-accent); font-size: 14px; display: block; }
 
         /* DEDICATION */
         .dedication-card { background: white; border: 1px solid #ddd; padding: 30px; border-radius: 10px; max-width: 700px; margin: 0 auto; text-align: center; }
         .quote { font-family: 'Times New Roman', serif; font-size: 24px; font-style: italic; color: var(--color-text); margin-bottom: 15px; border-left: 4px solid var(--color-accent); padding-left: 15px; }
-        .signature { text-align: right; font-weight: bold; color: var(--color-accent); }
         
-        /* AUTH MODAL STYLING */
+        /* MODALS */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; }
         .modal-content { background: white; width: 90%; max-width: 350px; border-radius: 10px; padding: 20px; max-height: 90vh; overflow-y: auto; }
-        .close-modal { float: right; font-size: 24px; cursor: pointer; }
-        .input-group { margin-bottom: 15px; }
-        .input-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
         .submit-btn { width: 100%; padding: 12px; background: var(--color-accent); color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-
-        /* FOOTER */
-        .app-footer { padding: 30px; background-color: var(--color-bg-secondary); color: var(--color-text); text-align: center; font-size: 14px; margin-top: 50px; }
-
     </style>
 </head>
 <body>
@@ -164,7 +52,7 @@
         <a href="#gallery" class="nav-item" onclick="setActive(this)">GALLERY</a>
         <a href="#timeline" class="nav-item" onclick="setActive(this)">JOURNEY</a>
         <a href="#dedication" class="nav-item" onclick="setActive(this)">MESSAGE</a>
-        <a href="#" class="nav-item" onclick="checkAuth()" style="color: var(--color-accent);"><i class="fas fa-user-circle"></i></a>
+        <a href="#" class="nav-item" onclick="startAuthProcess()" style="color: var(--color-accent);"><i class="fas fa-user-circle"></i></a>
     </nav>
     
     <section id="hero" class="hero-section">
@@ -176,7 +64,7 @@
             <p class="section-header">WELCOME TO OUR STORY</p>
             <h1 class="hero-text">Turning life's beautiful moments into lasting memories</h1>
             <p style="font-size: 14px; color: #555;">Documenting Your Journey: We make lasting memories accessible.</p>
-            <button class="submit-btn" onclick="checkAuth()" style="width: 200px; background-color: var(--color-accent); margin-top: 15px;">GET STARTED</button>
+            <button class="submit-btn" onclick="startAuthProcess()" style="width: 200px; background-color: var(--color-accent); margin-top: 15px;">GET STARTED</button>
         </div>
 
         <div class="hero-image-block">
@@ -196,7 +84,7 @@
         <p class="section-header">OUR TIMELINE</p>
         <h2 class="section-title">Tracing Our Journey</h2>
         <ul class="timeline-list">
-            <li><div class="timeline-date">MAY 20, 2023</div><div class="timeline-event">The day we first met.</div></li>
+            <li><div class="timeline-date">MAY 20, 2023</div><div class="timeline-event">First conversation that started everything.</div></li>
             <li><div class="timeline-date">OCTOBER 27, 2023</div><div class="timeline-event">Officially became a couple.</div></li>
             <li><div class="timeline-date">FEBRUARY 14, 2024</div><div class="timeline-event">Valentine's Day Trip.</div></li>
             <li><div class="timeline-date">TODAY</div><div class="timeline-event">Celebrating our story with this website.</div></li>
@@ -207,9 +95,7 @@
         <p class="section-header">A PERSONAL NOTE</p>
         <h2 class="section-title">My Heart's Message</h2>
         <div class="dedication-card">
-            <p class="quote">
-                "Every day with you is my favorite day. So, today is my new favorite day."
-            </p>
+            <p class="quote">"Every day with you is my favorite day. So, today is my new favorite day."</p>
             <div class="signature">- Always, Your Ko Ko</div>
         </div>
     </section>
@@ -251,24 +137,22 @@
         </div>
     </div>
 
+
     <script>
         // CONFIG - New Project Credentials
         const SUPABASE_URL = 'https://vueoiogjlttyyfgkirut.supabase.co'; 
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1ZW9pb2dqbHR0eXlmZ2tpcnV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4NTcyMTUsImV4cCI6MjA3OTQzMzIxNX0.3vrojWj3eKCK5rxFXRE7NUdi6XjFPHBx04B5pcitS4A'; 
-
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         let currentUser = JSON.parse(localStorage.getItem('love_user_data'));
 
         window.onload = function() {
             loadGallery();
-            if(currentUser) console.log("Logged in as:", currentUser.username);
         }
         
-        // --- UI HELPER ---
+        // --- UI & SCROLL ---
         function setActive(element) {
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             element.classList.add('active');
-            // Smooth scroll for single-page navigation (retained)
             const targetId = element.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
@@ -285,18 +169,15 @@
                 document.getElementById('authModal').style.display = 'flex'; // Go to login
             }
         }
+        function startAuthProcess() { checkAuth(); } // GET STARTED button handler
 
         function showAuthForm(type) {
             if(type === 'login') {
                 document.getElementById('loginForm').style.display='block';
                 document.getElementById('registerForm').style.display='none';
-                document.getElementById('tabLogin').style.borderBottom='2px solid var(--color-accent)';
-                document.getElementById('tabRegister').style.borderBottom='none';
             } else {
                 document.getElementById('loginForm').style.display='none';
                 document.getElementById('registerForm').style.display='block';
-                document.getElementById('tabRegister').style.borderBottom='2px solid var(--color-accent)';
-                document.getElementById('tabLogin').style.borderBottom='none';
             }
         }
         
@@ -308,11 +189,9 @@
 
             if(!name || !username || !pass) { alert("Name, Username, and Password are required."); return; }
 
-            // Check if username exists (UNIQUE constraint check)
             let { data: exist } = await supabase.from('users').select('*').eq('username', username);
             if(exist.length > 0) { alert("Username already taken."); return; }
 
-            // Insert (Assuming 'phone' is added to 'users' table)
             let { error } = await supabase.from('users').insert([{ name, username, phone, password: pass }]);
             
             if(!error) { 
@@ -327,7 +206,7 @@
             const username = document.getElementById('lUser').value;
             const pass = document.getElementById('lPass').value;
 
-            let { data, error } = await supabase
+            let { data } = await supabase
                 .from('users')
                 .select('*')
                 .eq('username', username)
@@ -357,10 +236,10 @@
             if(error || !memories || memories.length === 0) {
                 // FALLBACK TO HARDCODED PLACEHOLDERS
                 memories = [
-                    { image_url: "https://images.unsplash.com/photo-1543851720-3b47f43336d3?w=300", caption: "Our anniversary trip" },
-                    { image_url: "https://images.unsplash.com/photo-1502422079088-757b3f946e3b?w=300", caption: "Afternoon date" },
-                    { image_url: "https://images.unsplash.com/photo-1549441164-ce53434190c3?w=300", caption: "First trip to Paris" },
-                    { image_url: "https://images.unsplash.com/photo-1492684223071-2292f3922754?w=300", caption: "Sunset walk" },
+                    { image_url: "https://images.unsplash.com/photo-1543851720-3b47f43336d3?w=300", caption: "Our first trip" },
+                    { image_url: "https://images.unsplash.com/photo-1456247966750-7119253457e4?w=300", caption: "Sweet afternoon" },
+                    { image_url: "https://images.unsplash.com/photo-1502422079088-757b3f946e3b?w=300", caption: "Morning coffee" },
+                    { image_url: "https://images.unsplash.com/photo-1549441164-ce53434190c3?w=300", caption: "Our picnic" },
                 ];
                 con.innerHTML = '';
             }
@@ -381,15 +260,14 @@
             const caption = document.getElementById('uploadCaption').value;
             
             if(!imgUrl || !caption) { alert("Please fill both fields."); return; }
-            if(!currentUser) { alert("You must be logged in to share."); closeModal('uploadModal'); return; }
             
             let { error } = await supabase
                 .from('user_content')
                 .insert([{ 
-                    user_id: currentUser.id, // Assuming 'id' is unique identifier
+                    user_id: currentUser.id, 
                     image_url: imgUrl, 
                     caption: caption,
-                    username: currentUser.username // For easy filtering/display
+                    username: currentUser.username
                 }]);
                 
             if(!error) {
