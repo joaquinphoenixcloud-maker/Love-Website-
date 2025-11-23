@@ -9,14 +9,14 @@
     <style>
         /* ELEGANT LOVE WEBSITE COLOR PALETTE */
         :root {
-            --color-accent: #A0522D; /* Soft Brown/Terracotta for Elegant Look */
-            --color-bg-primary: #F8F8F8; /* Off-White/Cream */
+            --color-accent: #A0522D; /* Soft Brown/Rose Gold */
+            --color-bg-primary: #FFFFFF; /* White Background for Clean Look */
+            --color-bg-secondary: #F8F8F8; /* Soft Cream for Sections */
             --color-text: #333333;
-            --color-subtle-bg: #EAE0D3; /* Soft secondary background */
         }
 
         body {
-            font-family: Georgia, serif; /* Elegant Serif Font for headings and body */
+            font-family: Georgia, serif; /* Elegant Serif Font */
             margin: 0;
             padding: 0;
             background-color: var(--color-bg-primary);
@@ -48,55 +48,53 @@
             padding: 10px 0;
             background: white;
             border-top: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 50;
         }
+        .nav-item { color: var(--color-text); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-item:hover { color: var(--color-accent); }
 
-        .nav-item {
-            color: var(--color-text);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-item:hover, .nav-item.active {
-            color: var(--color-accent);
-        }
-
-        /* HERO SECTION */
+        /* HERO SECTION - Complex Grid Layout */
         .hero-section {
-            background-image: url('https://images.unsplash.com/photo-1593005510421-e6d2df292d02?w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 60vh; /* Large height for impact */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr; /* Image | Text | Image */
+            gap: 20px;
+            padding: 40px 15px;
+            background: var(--color-bg-secondary);
         }
-        
-        .hero-overlay {
-            background: rgba(255, 255, 255, 0.75); /* Translucent background for text */
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 80%;
+
+        .hero-image-block {
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .hero-image-block img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-text-block {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero-text {
             font-family: 'Times New Roman', serif;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             color: var(--color-accent);
-            margin-bottom: 10px;
+            line-height: 1.2;
+            margin-bottom: 15px;
         }
-        
+
         /* GENERAL SECTIONS */
         .content-section {
-            padding: 40px 15px;
-            max-width: 900px;
+            padding: 50px 15px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -105,25 +103,27 @@
             text-transform: uppercase;
             color: var(--color-accent);
             margin-bottom: 5px;
+            text-align: center;
         }
         
         .section-title {
-            font-size: 32px;
+            font-size: 36px;
             margin-top: 0;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+            text-align: center;
         }
 
-        /* --- 1. GALLERY --- */
+        /* --- 1. GALLERY (Using new clean layout) --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns like the mockup */
+            gap: 10px;
         }
         
         .photo-block {
             overflow: hidden;
             border-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
         .photo-block img {
@@ -131,18 +131,14 @@
             height: 180px;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s;
         }
         
-        .photo-block img:hover {
-            transform: scale(1.05);
-        }
-
         /* --- 2. TIMELINE --- */
         .timeline-list {
             list-style: none;
             padding: 0;
-            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .timeline-list li {
@@ -164,45 +160,33 @@
         
         .timeline-date {
             font-weight: bold;
-            color: var(--color-subtle-bg);
-            background: var(--color-accent);
-            padding: 3px 8px;
-            border-radius: 4px;
+            color: var(--color-accent);
             font-size: 14px;
-            display: inline-block;
-            margin-bottom: 5px;
         }
         
         /* --- 3. DEDICATION --- */
         .dedication-card {
             background: white;
-            border: 1px solid #ddd;
+            border: 1px solid var(--color-accent);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-top: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
         }
         
         .quote {
             font-family: 'Times New Roman', serif;
-            font-size: 22px;
+            font-size: 24px;
             font-style: italic;
-            color: var(--color-subtle-bg);
+            color: var(--color-text);
             margin-bottom: 15px;
-            border-left: 4px solid var(--color-accent);
-            padding-left: 15px;
         }
         
-        .signature {
-            text-align: right;
-            font-weight: bold;
-            color: var(--color-accent);
-        }
-
         /* FOOTER */
         .app-footer {
             padding: 30px;
-            background-color: var(--color-subtle-bg);
+            background-color: var(--color-bg-secondary);
             color: var(--color-text);
             text-align: center;
             font-size: 14px;
@@ -224,44 +208,43 @@
     </nav>
     
     <section id="hero" class="hero-section">
-        <div class="hero-overlay">
-            <p class="section-header">WELCOME TO OUR LOVE STORY</p>
+        <div class="hero-image-block">
+            <img src="https://images.unsplash.com/photo-1579730048682-ee4a2753a812?w=500" alt="Bride and Groom">
+        </div>
+        
+        <div class="hero-text-block">
+            <p class="section-header">WELCOME TO OUR STORY</p>
             <h1 class="hero-text">Turning life's beautiful moments into lasting memories</h1>
-            <a href="#gallery" style="color: var(--color-accent); text-decoration: none; font-weight: bold;">EXPLORE NOW <i class="fas fa-arrow-down"></i></a>
+            <p style="font-size: 14px; color: #555;">Documenting Your Journey: We make lasting memories accessible.</p>
+            <a href="#gallery" style="color: var(--color-accent); text-decoration: none; font-weight: bold; margin-top: 10px; display: block;">GET STARTED <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="hero-image-block">
+            <img src="https://images.unsplash.com/photo-1517404215738-15263e9f9178?w=500" alt="Couple on Beach">
         </div>
     </section>
 
     <section id="gallery" class="content-section">
-        <p class="section-header">SEE OUR FAVORITES</p>
+        <p class="section-header">EXPLORE OUR FAVORITES</p>
         <h2 class="section-title">The Best of Us</h2>
         <div class="gallery-grid">
-            <div class="photo-block"><img src="https://images.unsplash.com/photo-1543851720-3b47f43336d3?w=300" alt="Couple 1"></div>
-            <div class="photo-block"><img src="https://images.unsplash.com/photo-1492684223071-2292f3922754?w=300" alt="Couple 2"></div>
-            <div class="photo-block"><img src="https://images.unsplash.com/photo-1551817958-3928236166e4?w=300" alt="Couple 3"></div>
-            <div class="photo-block"><img src="https://images.unsplash.com/photo-1517404215738-15263e9f9178?w=300" alt="Couple 4"></div>
+            <div class="photo-block"><img src="https://images.unsplash.com/photo-1549441164-ce53434190c3?w=300" alt="Memory 1"></div>
+            <div class="photo-block"><img src="https://images.unsplash.com/photo-1502422079088-757b3f946e3b?w=300" alt="Memory 2"></div>
+            <div class="photo-block"><img src="https://images.unsplash.com/photo-1549441164-ce53434190c3?w=300" alt="Memory 3"></div>
+            <div class="photo-block"><img src="https://images.unsplash.com/photo-1502422079088-757b3f946e3b?w=300" alt="Memory 4"></div>
+            <div class="photo-block"><img src="https://images.unsplash.com/photo-1492684223071-2292f3922754?w=300" alt="Memory 5"></div>
+            <div class="photo-block"><img src="https://images.unsplash.com/photo-1517404215738-15263e9f9178?w=300" alt="Memory 6"></div>
         </div>
     </section>
 
-    <section id="timeline" class="content-section" style="background: var(--color-bg-light);">
+    <section id="timeline" class="content-section" style="background: var(--color-bg-secondary);">
         <p class="section-header">OUR TIMELINE</p>
         <h2 class="section-title">Tracing Our Journey</h2>
         <ul class="timeline-list">
-            <li>
-                <div class="timeline-date">MAY 20, 2023</div>
-                <div class="timeline-event">First conversation that started everything.</div>
-            </li>
-            <li>
-                <div class="timeline-date">OCTOBER 27, 2023</div>
-                <div class="timeline-event">Officially became a couple.</div>
-            </li>
-            <li>
-                <div class="timeline-date">FEBRUARY 14, 2024</div>
-                <div class="timeline-event">The most memorable Valentine's Day trip.</div>
-            </li>
-            <li>
-                <div class="timeline-date">TODAY</div>
-                <div class="timeline-event">Celebrating our story with this website.</div>
-            </li>
+            <li><div class="timeline-date">MAY 20, 2023</div><div class="timeline-event">The day we first met.</div></li>
+            <li><div class="timeline-date">OCTOBER 27, 2023</div><div class="timeline-event">Officially became a couple.</div></li>
+            <li><div class="timeline-date">FEBRUARY 14, 2024</div><div class="timeline-event">Valentine's Day Trip.</div></li>
+            <li><div class="timeline-date">TODAY</div><div class="timeline-event">Celebrating our story with this website.</div></li>
         </ul>
     </section>
 
